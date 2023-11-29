@@ -40,6 +40,15 @@ public class Knockback : MonoBehaviour
         animator.SetBool("Damage", false);
     }
 
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            AddKnockback(other.transform.forward, 100);
+            StartCoroutine(damageAnim());
+        }
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Hand") && other.gameObject.activeInHierarchy) //  && other.GetInstanceID() != GetComponent<Punch>().hand.GetInstanceID() //  && other != GetComponent<Punch>().hand
