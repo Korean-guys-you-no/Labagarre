@@ -20,18 +20,16 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
 
     [SerializeField]
-    private InputActionReference moveInput, punchInput;
+    private InputActionReference moveInput;
 
     private void OnEnable()
     {
         moveInput.action.Enable();
-        punchInput.action.Enable();
     }
 
     private void OnDisable()
     {
         moveInput.action.Disable();
-        punchInput.action.Disable();
     }
 
     void Start()
