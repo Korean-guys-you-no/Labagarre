@@ -114,7 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8348124419556233706}
-  - component: {fileID: 4988822191971346311}
+  - component: {fileID: 3117889281376077188}
   m_Layer: 0
   m_Name: Punch
   m_TagString: Hand
@@ -131,14 +131,14 @@ Transform:
   m_GameObject: {fileID: 5187373081385272177}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0.5}
+  m_LocalPosition: {x: 0, y: 1, z: 0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3059996688309629395}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4988822191971346311
-SphereCollider:
+--- !u!136 &3117889281376077188
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -155,8 +155,10 @@ SphereCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &8972070058412467567
 PrefabInstance:

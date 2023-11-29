@@ -9,6 +9,7 @@ public class Knockback : MonoBehaviour
     float mass = 3.0F; // defines the character mass
     Vector3 impact = Vector3.zero;
     private CharacterController character;
+
     // Use this for initialization
     void Start()
     {
@@ -41,9 +42,9 @@ public class Knockback : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Hand") && other.gameObject.activeInHierarchy && other.GetInstanceID() != GetComponent<Collider>().GetInstanceID())
+        if (other.CompareTag("Hand") && other.gameObject.activeInHierarchy) //  && other.GetInstanceID() != GetComponent<Punch>().hand.GetInstanceID() //  && other != GetComponent<Punch>().hand
         {
-            AddKnockback(other.transform.forward, 10);
+            AddKnockback(other.transform.forward, 30);
             StartCoroutine(damageAnim());
         }
     }
