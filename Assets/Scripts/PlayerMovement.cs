@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,6 +18,22 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
     private Vector3 velocity;
     Animator animator;
+
+    [SerializeField]
+    private InputActionReference moveInput, punchInput;
+
+    private void OnEnable()
+    {
+        moveInput.action.Enable();
+        punchInput.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        moveInput.action.Disable();
+        punchInput.action.Disable();
+    }
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -26,7 +45,10 @@ public class PlayerMovement : MonoBehaviour
         if (characterController.isGrounded && velocity.y < 0) {
             velocity.y = -1;
         }
-        movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        //movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        movement = moveInput.action.ReadValue<Vector2>();
+        //Debug.Log("OLD " + movement);
+        //Debug.Log("NEW" + movement2);
         Vector3 direction = new Vector3(movement.x, 0, movement.y).normalized;
         animator.transform.localPosition = Vector3.zero;
         animator.transform.localEulerAngles = Vector3.zero;
