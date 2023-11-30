@@ -8140,7 +8140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ddfd82baa68bd4dbfe1e693350a04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animations: []
 --- !u!1 &5866725972542158526
 GameObject:
   m_ObjectHideFlags: 0
