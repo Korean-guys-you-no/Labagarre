@@ -139,7 +139,7 @@ PrefabInstance:
     - target: {fileID: 1326292462970710689, guid: bc153b2e4496103418c2e23de2469a89, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 937898453}
+      objectReference: {fileID: 1005359505}
     - target: {fileID: 1528833857346134856, guid: bc153b2e4496103418c2e23de2469a89, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -168,14 +168,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 484609624}
+    - target: {fileID: 3943976192484265034, guid: bc153b2e4496103418c2e23de2469a89, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4112251885054652142, guid: bc153b2e4496103418c2e23de2469a89, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 937898453}
+      objectReference: {fileID: 1005359505}
     - target: {fileID: 4664758577917449949, guid: bc153b2e4496103418c2e23de2469a89, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 937898453}
+      objectReference: {fileID: 1005359505}
     - target: {fileID: 5941702149788931341, guid: bc153b2e4496103418c2e23de2469a89, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -231,7 +235,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7970753107013669317, guid: bc153b2e4496103418c2e23de2469a89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1632496554}
   m_SourcePrefab: {fileID: 100100000, guid: bc153b2e4496103418c2e23de2469a89, type: 3}
 --- !u!1001 &280528999
 PrefabInstance:
@@ -655,13 +662,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 68.29, y: 0, z: 0}
---- !u!43 &937898453
+--- !u!43 &1005359505
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3006462
+  m_Name: pb_Mesh-3006462(Clone)
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1035,6 +1042,42 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1632496547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7970753107013669317, guid: bc153b2e4496103418c2e23de2469a89, type: 3}
+  m_PrefabInstance: {fileID: 266714576}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1632496554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632496547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: a9e91ce3ad8454c478dea4ec8ac42883, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1745242302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,18 +1346,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4718277115340451896, guid: 52254a2f05bce52438e7bb63e79ddbd9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4718277115340451896, guid: 52254a2f05bce52438e7bb63e79ddbd9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4718277115340451896, guid: 52254a2f05bce52438e7bb63e79ddbd9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4718277115340451896, guid: 52254a2f05bce52438e7bb63e79ddbd9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 41.240166
       objectReference: {fileID: 0}
@@ -1354,10 +1385,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4718277115340451896, guid: 52254a2f05bce52438e7bb63e79ddbd9, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6549032602804146790, guid: 52254a2f05bce52438e7bb63e79ddbd9, type: 3}
       propertyPath: m_Name
       value: Player 2
@@ -1375,18 +1402,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3059996688309629395, guid: 412ba21e6a6e4624598e0fe6ba6114c8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3059996688309629395, guid: 412ba21e6a6e4624598e0fe6ba6114c8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3059996688309629395, guid: 412ba21e6a6e4624598e0fe6ba6114c8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3059996688309629395, guid: 412ba21e6a6e4624598e0fe6ba6114c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 26.810165
@@ -1425,10 +1440,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3059996688309629395, guid: 412ba21e6a6e4624598e0fe6ba6114c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3059996688309629395, guid: 412ba21e6a6e4624598e0fe6ba6114c8, type: 3}
-      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3598143809226937229, guid: 412ba21e6a6e4624598e0fe6ba6114c8, type: 3}
