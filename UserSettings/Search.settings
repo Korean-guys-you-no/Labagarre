@@ -8,6 +8,9 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
+	"last_search.3BE40471" = "audience type:prefab"
+	"OpenInspectorPreview.3BE40471" = "0"
+	"currentGroup.3BE40471" = "scene"
 }
 providers = {
 	packages = {
@@ -59,6 +62,21 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"audience type:"
+	"audience animatephysics:"
+	"audience andr"
+	"audience androidetc2"
+	"audience androidetc2fallback"
+	"audience androidetc2fallbackoverride:"
+	"audience"
+	"audience prefab:r"
+	"audience prefab:regular pre"
+	"audience prefab:regular prefab:regular"
+	"audience prefab:regular"
+	"audience prefab:"
+	"audience prefab:instance"
+	"audience prefab:o"
+	"audience prefab:altered"
 ]
 searchItemFavorites = [
 ]
