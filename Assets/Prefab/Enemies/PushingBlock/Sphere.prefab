@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 8687652111105769980}
   - component: {fileID: 3659701250403991333}
   - component: {fileID: 5431526161075027701}
+  - component: {fileID: 8448589047874323996}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,4 +170,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f501373db00e845bc037c1054efbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  knockBack: 0
+--- !u!114 &8448589047874323996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7504477878563391780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4758857f742e6004e9420281ef5b2573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackCooldown: 0.5
+  ballKnockBackStrength: 30
+  knockBackStrength: 200
