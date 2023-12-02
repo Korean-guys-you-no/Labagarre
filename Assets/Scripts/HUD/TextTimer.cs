@@ -23,7 +23,6 @@ public class TextTimer : MonoBehaviour
     {
         if (timer.CountdownEnded())
         {
-            Debug.Log("countdown ended");
             timer.RestartCountdown();
             UpdateTextTimer();
         }
