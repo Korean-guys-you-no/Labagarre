@@ -8,7 +8,7 @@ public class TextTimer : MonoBehaviour
 {
     private Timer timer;
     private GameManager manager;
-    [SerializeField] private TextMeshProUGUI textTimer;
+    private TextMeshProUGUI textTimer;
     // Start is called before the first frame update
     void Start()
     {

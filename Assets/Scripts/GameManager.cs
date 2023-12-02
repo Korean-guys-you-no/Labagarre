@@ -5,12 +5,18 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    private float timeSinceStart;
     public float TimeSinceStart { private set { timeSinceStart = value; } get { return timeSinceStart; }}
+    public bool GameEnded { private set { gameEnd = value; } get { return gameEnd; } }
+
+    public float GameDuration;
+    private float timeSinceStart;
+    private bool gameEnd;
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+        GameEnded = false;
     }
 
     private void Awake()
@@ -29,6 +35,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         TimeSinceStart += Time.deltaTime;
+        if (TimeSinceStart >= GameDuration)
+            GameEnded = true;
     }
 
 }
