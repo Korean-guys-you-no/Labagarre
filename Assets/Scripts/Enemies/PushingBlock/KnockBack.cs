@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class KnockBack : MonoBehaviour
 {
-    public float knockBackCooldown;
-    public float ballKnockBackStrength;
-    public float knockBackStrength;
-
+    private float knockBackCooldown = 0.5f;
+    private float ballKnockBackStrength = 30f;
+    private float knockBackStrength = 200f;
     private Rigidbody Rb;
     private PursueTarget pursueTarget;
 
