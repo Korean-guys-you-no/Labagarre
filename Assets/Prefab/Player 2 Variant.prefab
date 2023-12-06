@@ -171,6 +171,14 @@ PrefabInstance:
       propertyPath: punchInput
       value: 
       objectReference: {fileID: 8540544963869183785, guid: 363001dc513c6b040bfb5a785a1e7e8d, type: 3}
+    - target: {fileID: 5785997700623968989, guid: 412ba21e6a6e4624598e0fe6ba6114c8, type: 3}
+      propertyPath: moveInput
+      value: 
+      objectReference: {fileID: -2997007915571054104, guid: 363001dc513c6b040bfb5a785a1e7e8d, type: 3}
+    - target: {fileID: 6868439049024940845, guid: 412ba21e6a6e4624598e0fe6ba6114c8, type: 3}
+      propertyPath: hitInput
+      value: 
+      objectReference: {fileID: 8540544963869183785, guid: 363001dc513c6b040bfb5a785a1e7e8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8089129033626474558, guid: 412ba21e6a6e4624598e0fe6ba6114c8, type: 3}

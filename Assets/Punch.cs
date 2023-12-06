@@ -12,6 +12,10 @@ public class Punch : MonoBehaviour
 
     public GameObject hand;
 
+    public AudioSource punchSoundEffect;
+
+    private bool isPunching = false;
+
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
@@ -32,6 +36,9 @@ public class Punch : MonoBehaviour
         if (hitInput.action.triggered)
         {
             StartCoroutine(punchAnim());
+            if (!isPunching) {
+                StartCoroutine(playPunchSoundEffect());
+            }
         }
     }
 
@@ -42,5 +49,13 @@ public class Punch : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         hand.SetActive(false);
         animator.SetBool("Punch", false);
+    }
+
+    private IEnumerator playPunchSoundEffect() 
+    {
+        isPunching = true;
+        punchSoundEffect.Play();
+        yield return new WaitForSeconds(punchSoundEffect.clip.length);
+        isPunching = false;
     }
 }
