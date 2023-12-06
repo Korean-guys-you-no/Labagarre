@@ -14,13 +14,14 @@ public class PursueTarget : MonoBehaviour
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
-        Players = GameObject.FindGameObjectsWithTag("Player");
         Agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
     void Update()
     {
+        Players = GameObject.FindGameObjectsWithTag("Player");
         SelectTarget();
+
         if (Target != null && knockBack == false)
         {
             Vector3 targetPosition = Target.transform.position;
@@ -34,6 +35,7 @@ public class PursueTarget : MonoBehaviour
     private void SelectTarget()
     {
         Target = null;
+
         foreach (var player in Players)
         {
             Vector3 pos = (player.transform.position - transform.position);
