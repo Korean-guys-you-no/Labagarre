@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class OnDeath : MonoBehaviour
 {
-    private void OnTriggerExit(Collider other)
+    public AudioSource[] crowdPlayerDeathSounds;
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Lava"))
         {
-            GameManager.instance.ReloadScene();
+            //crowdPlayerDeathSounds[Random.Range(0, crowdPlayerDeathSounds.Length)]
+            crowdPlayerDeathSounds[Random.Range(0, crowdPlayerDeathSounds.Length)].Play();
+            //GameManager.instance.ReloadScene();
+
         }
     }
 
@@ -17,7 +21,7 @@ public class OnDeath : MonoBehaviour
     //    Debug.Log("ici");
     //    if (other.gameObject.CompareTag("Lava"))
     //    {
-    //        Debug.Log("là");
+    //        Debug.Log("lï¿½");
     //        gameManager.ReloadScene();
     //    }
     //}
