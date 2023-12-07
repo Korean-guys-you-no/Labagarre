@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject player2Prefab;
     public int maxLives = 3;
     public string player1Name = "Player(Clone)";
+    public GameObject pushingBallsSpawner;
 
     private float timeSinceStart;
     private bool gameEnd;
@@ -22,19 +23,23 @@ public class GameManager : MonoBehaviour
     private int player2Lives;
     private GameObject player1;
     private GameObject player2;
+    private bool gameStarted = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         instance = this;
         GameEnded = false;   
     }
 
+    public void StartGame()
+    {
+        GeneratePlayers();
+        pushingBallsSpawner.SetActive(true);
+        gameStarted = true;
+    }
+
     private void Awake()
     {
-        var player1Spawner = player1Spawners[Random.Range(0, 2)];
-        var player2Spawner = player2Spawners[Random.Range(0, 2)];
-
         if (instance == null)
         {
             instance = this;
@@ -43,23 +48,32 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void GeneratePlayers()
+    {
+        var player1Spawner = player1Spawners[Random.Range(0, 2)];
+        var player2Spawner = player2Spawners[Random.Range(0, 2)];
+
         player1 = Instantiate(player1Prefab, player1Spawner.transform.position, player1Spawner.transform.rotation);
         player1Lives = maxLives;
         player2 = Instantiate(player2Prefab, player2Spawner.transform.position, player2Spawner.transform.rotation);
         player2Lives = maxLives;
-
     }
 
-    // Update is called once per frame
     void Update()
     {
-        TimeSinceStart += Time.deltaTime;
-        if (TimeSinceStart >= GameDuration)
-            GameEnded = true;
-        if (player1Lives <= 0 || player2Lives <= 0)
+        if (gameStarted)
         {
-            GameEnded = true;
-            ReloadScene();
+            TimeSinceStart += Time.deltaTime;
+
+            if (TimeSinceStart >= GameDuration)
+                GameEnded = true;
+            if (player1Lives <= 0 || player2Lives <= 0)
+            {
+                GameEnded = true;
+                ReloadScene();
+            }
         }
     }
 
