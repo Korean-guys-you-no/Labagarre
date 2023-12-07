@@ -11,8 +11,16 @@ public class OnDeath : MonoBehaviour
         if (other.gameObject.CompareTag("Lava"))
         {
             //crowdPlayerDeathSounds[Random.Range(0, crowdPlayerDeathSounds.Length)]
-            crowdPlayerDeathSounds[Random.Range(0, crowdPlayerDeathSounds.Length)].Play();
             GameManager.instance.Respawn(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Lava"))
+        {
+            //crowdPlayerDeathSounds[Random.Range(0, crowdPlayerDeathSounds.Length)]
+            crowdPlayerDeathSounds[Random.Range(0, crowdPlayerDeathSounds.Length)].Play();
         }
     }
 }

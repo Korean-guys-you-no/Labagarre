@@ -10,7 +10,6 @@ public class SpawnPushingBall : MonoBehaviour
 
     private GameObject spawner;
 
-    // Start is called before the first frame update
     void Start()
     {
         spawner = pushingBallSpawners[Random.Range(0, 4)];
