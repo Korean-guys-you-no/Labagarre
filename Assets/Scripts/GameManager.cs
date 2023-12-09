@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,15 +20,16 @@ public class GameManager : MonoBehaviour
     private float timeSinceStart;
     private bool gameEnd;
     private int player1Lives;
+    private LivesUI player1LUI;
     private int player2Lives;
+    private LivesUI player2LUI;
     private GameObject player1;
     private GameObject player2;
 
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
-        GameEnded = false;   
+        GameEnded = false;
     }
 
     private void Awake()
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour
         player2 = Instantiate(player2Prefab, player2Spawner.transform.position, player2Spawner.transform.rotation);
         player2Lives = maxLives;
 
+        player1LUI = GameObject.Find("/HUD/P1 Lives/Hearts").GetComponent<LivesUI>();
+        player2LUI = GameObject.Find("/HUD/P2 Lives/Hearts").GetComponent<LivesUI>();
     }
 
     // Update is called once per frame
@@ -69,10 +73,12 @@ public class GameManager : MonoBehaviour
         {
             Player1Respawn();
             player1Lives--;
+            player1LUI.UpdateLives(player1Lives);
         } else
         {
             Player2Respawn();
             player2Lives--;
+            player2LUI.UpdateLives(player2Lives);
         }
     }
 
