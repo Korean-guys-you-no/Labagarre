@@ -19,8 +19,8 @@ public class LivesUI : MonoBehaviour
         
     }
 
-    public void UpdateLives(int lives)
+    public void UpdateLives(float lives)
     {
-        image.fillAmount = (1/3) * lives;
+        image.fillAmount = (1.0f/3.0f) * lives;
     }
 }
